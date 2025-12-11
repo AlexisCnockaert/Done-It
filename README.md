@@ -15,13 +15,35 @@ The goal: create a futuristic productivity assistant that guide the user through
 - MongoDB for persistent task storage
 - RESTful API for todo management
 
-##  Features (in progress)
+## Setup Guide
 
--  Add, list, delete and toggle todos  
--  Real-time sync between frontend and backend  
--  (Upcoming) AI assistant to expand todos with structured guidance
+Run the backend, frontend, and MongoDB locally.
 
+### Prerequisites
 
+- Java 21 & Maven  
+- Node.js & npm  
+- MongoDB Community Edition
 
+### Start MongoDB
 
+```bash
+# Linux / macOS
+mongod --dbpath ~/mongodb/data
+
+# Windows
+"C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath C:\mongodb\data
+```
+### Run SpringBoot Backend
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+
+### Run React Frontend ( on new terminal )
+```bash
+cd frontend
+npm install
+npm start
+```
 
