@@ -29,7 +29,7 @@ body {
     padding-top: 10px;
 }
 
-.todos{
+.todos {
     font-size: 1.8rem;
     color: #fafafa;
     text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;
@@ -52,7 +52,8 @@ body {
     font-size: 2rem;
     font-weight: 800;
     color: #fafafa;
-    text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;    margin-bottom: 100px;
+    text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;
+    margin-bottom: 100px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -79,6 +80,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -89,6 +91,7 @@ body {
     0% {
         text-shadow: 0 0 5px #8f42e6, 0 0 15px #8f42e6;
     }
+
     100% {
         text-shadow: 0 0 15px #8f42e6, 0 0 30px #8f42e6;
     }
@@ -98,6 +101,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     margin-bottom: 30px;
 }
 
@@ -115,6 +119,7 @@ body {
 
 .neon-button {
     margin-left: 15px;
+    font-family: "BBH Sans Hegarty", sans-serif;
     padding: 20px 35px;
     border: 2px solid #8f42e6;
     background: black;
@@ -132,9 +137,10 @@ body {
 }
 
 .help-button {
-    position: absolute;       
-    top: 20px;            
-    right: 20px;           
+    position: absolute;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    top: 20px;
+    right: 20px;
     padding: 15px 25px;
     border: 2px solid #8f42e6;
     background: black;
@@ -143,7 +149,7 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     box-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6;
-    transition: transform 0.2s, box-shadow 0.2s;          
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .help-button:active {
@@ -157,25 +163,25 @@ body {
 }
 
 .help-box {
-    position: absolute;    
-    top: 100px;             
-    right: 20px;         
-    background: black;       
-    color: #fafafa;         
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background: black;
+    color: #fafafa;
     border: 2px solid #8f42e6;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6;
     font-size: 1rem;
-    animation: fadeInUp 0.6s ease-out; 
-    max-width: 500px; 
-    height: 300px;      
+    animation: fadeInUp 0.6s ease-out;
+    max-width: 500px;
+    height: 300px;
 }
 
 .help-box li {
-   
+
     margin-bottom: 15px;
-     
+
 }
 
 
@@ -242,70 +248,74 @@ body {
 }
 
 .gg-check-r {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  width: 22px;
-  height: 22px;
-  border: 2px solid;
-  transform: scale(var(--ggs, 1));
-  border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    transform: scale(var(--ggs, 1));
+    border-radius: 4px;
 }
+
 .gg-check-r::after {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  left: 3px;
-  top: -1px;
-  width: 6px;
-  height: 10px;
-  border-width: 0 2px 2px 0;
-  border-style: solid;
-  transform-origin: bottom left;
-  transform: rotate(45deg);
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    width: 6px;
+    height: 10px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
 }
 
 .gg-trash {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  transform: scale(var(--ggs, 1));
-  width: 10px;
-  height: 12px;
-  border: 2px solid transparent;
-  box-shadow:
-    0 0 0 2px,
-    inset -2px 0 0,
-    inset 2px 0 0;
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-  margin-top: 4px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 10px;
+    height: 12px;
+    border: 2px solid transparent;
+    box-shadow:
+        0 0 0 2px,
+        inset -2px 0 0,
+        inset 2px 0 0;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    margin-top: 4px;
 }
+
 .gg-trash::after,
 .gg-trash::before {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
 }
+
 .gg-trash::after {
-  background: currentColor;
-  border-radius: 3px;
-  width: 16px;
-  height: 2px;
-  top: -4px;
-  left: -5px;
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px;
 }
+
 .gg-trash::before {
-  width: 10px;
-  height: 4px;
-  border: 2px solid;
-  border-bottom: transparent;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  top: -7px;
-  left: -2px;
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px;
 }
 
 .error-message {
