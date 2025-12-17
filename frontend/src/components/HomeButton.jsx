@@ -4,10 +4,10 @@ const HomeButton = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="gg-home"
-      onClick={() => navigate('/')}
-    />
+   <div className="home-wrapper" onClick={() => navigate('/')}>
+  <div className="gg-home" />
+</div>
+
   );
 };
 

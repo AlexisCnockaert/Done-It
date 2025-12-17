@@ -81,18 +81,16 @@
   color: white;
   box-sizing: border-box;
   display: block;
-  transform: scale(var(--ggs, 1));
+    transform: scale(var(--ggs, 1)) translateY(3px);
   width: 18px;
   height: 14px;
   border: 2px solid;
   border-top: 0;
   border-radius: 2px;
-  position: fixed;
-  top: 35px;
-  left: 40px;
-  z-index: 1000;
-  cursor: pointer
+  position: relative; 
+  cursor: pointer;
 }
+
 
 .gg-home::after,
 .gg-home::before {
@@ -118,4 +116,27 @@
   border: 2px solid;
   bottom: 0;
   left: 4px;
+}
+
+.home-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #8f42e6;
+  border-radius: 8px;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  box-shadow: 0 0 15px #8f42e6, 0 0 30px #8f42e6;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
