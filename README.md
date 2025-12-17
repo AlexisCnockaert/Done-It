@@ -25,7 +25,7 @@ Run the backend, frontend, and MongoDB locally.
 - Node.js & npm  
 - MongoDB Community Edition
 
-### Start MongoDB
+### Start MongoDB - first terminal
 
 ```bash
 # Linux / macOS
@@ -34,13 +34,13 @@ mongod --dbpath ~/mongodb/data
 # Windows
 "C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath C:\mongodb\data
 ```
-### Run SpringBoot Backend
+### Run SpringBoot Backend - second terminal
 ```bash
 mvn clean install
 mvn spring-boot:run
 ```
 
-### Run React Frontend ( on new terminal )
+### Run React Frontend - third terminal
 ```bash
 cd frontend
 npm install
