@@ -1,4 +1,4 @@
-#  ToDone
+#  DoneIt
 
 
 A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL(MongoDB)** implementing **AI Model Features**, .\
