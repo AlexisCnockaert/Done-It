@@ -21,6 +21,7 @@ const Home = () => {
                 Let AI guide you through each step of your tasks
 
             </p>
+            
             <div style={{ alignSelf: 'flex-start', marginBottom: '60px' }}>
                 <button onClick={toggleHelp} className="help-button">
                     How to use it?
