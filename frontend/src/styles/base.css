@@ -1,0 +1,30 @@
+body {
+    background-image: url("../assets/bg_2.jpg");
+    background-size: 100%;
+    color: #8f42e6;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 40px;
+}
+
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.App {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 80px 100px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6;
+    backdrop-filter: blur(10px);
+    padding-top: 10px;
+}

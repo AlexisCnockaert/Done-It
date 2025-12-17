@@ -1,0 +1,68 @@
+
+.todos {
+    font-size: 1.8rem;
+    color: #fafafa;
+    text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.neon-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fafafa;
+    text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-desc {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fafafa;
+    text-shadow: 0 0 20px #8f42e6, 0 0 40px #8f42e6, 0 0 60px #8f42e6;
+    margin-bottom: 100px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.intro-text {
+    color: #fafafa;
+    font-size: 1.7rem;
+    max-width: 1150px;
+    margin: 0 auto 90px auto;
+    text-align: left;
+    line-height: 1.6;
+    animation: fadeInUp 1.5s ease-out, glowPulse 3s infinite alternate;
+}
+
+.glow {
+    color: #b48fff;
+    text-shadow: 0 0 6px #8f42e6, 0 0 15px #8f42e6, 0 0 25px #8f42e6;
+    font-weight: bold;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 5px #8f42e6, 0 0 15px #8f42e6;
+    }
+
+    100% {
+        text-shadow: 0 0 15px #8f42e6, 0 0 30px #8f42e6;
+    }
+}
