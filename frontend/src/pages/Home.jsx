@@ -13,7 +13,7 @@ const Home = () => {
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
             <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet" />
-            <h1 className="neon-title">To Done</h1>
+            <h1 className="neon-title">Done It</h1>
             <p className="intro-desc">Be productive, efficient, organized</p>
             <p className="intro-text">
                 Manage your tasks with a <span className="glow">touch of style </span>
