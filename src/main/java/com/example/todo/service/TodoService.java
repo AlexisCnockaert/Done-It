@@ -1,9 +1,9 @@
 package com.example.todo.service;
 
-import com.example.todo.TodoRequest;
-import com.example.todo.TodoDTO;
+import com.example.todo.dto.TodoDTO;
+import com.example.todo.dto.TodoRequest;
 import com.example.todo.exception.TodoNotFoundException;
-import com.example.todo.TodoDTOMapper;
+import com.example.todo.mapper.TodoMapper;
 import com.example.todo.model.Todo;
 import com.example.todo.repository.TodoRepository;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,10 @@ public class TodoService {
 
 
     private final TodoRepository todoRepository;
-    private final TodoDTOMapper todoMapper;
+    private final TodoMapper todoMapper;
+    private TodoStepService todoStepService; 
 
-    public TodoService(TodoDTOMapper todoMapper, TodoRepository todoRepository) {
+    public TodoService(TodoMapper todoMapper, TodoRepository todoRepository) {
         this.todoMapper = todoMapper;
         this.todoRepository = todoRepository;
     }
@@ -59,6 +60,8 @@ public class TodoService {
         if (!todoRepository.existsById(id)) {
             throw new TodoNotFoundException("Todo not found with id: " + id);
         }
+        todoStepService.deleteStepsByTodoId(id);
+        
         todoRepository.deleteById(id);
     }
 }

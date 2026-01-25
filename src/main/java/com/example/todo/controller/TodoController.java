@@ -1,7 +1,7 @@
 package com.example.todo.controller;
 
-import com.example.todo.TodoRequest;
-import com.example.todo.TodoDTO;
+import com.example.todo.dto.TodoDTO;
+import com.example.todo.dto.TodoRequest;
 import com.example.todo.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

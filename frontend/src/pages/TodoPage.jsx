@@ -1,32 +1,70 @@
-import { useTodos } from '../hooks/useTodos';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import todoService from '../services/todoService';
+import ErrorMessage from '../components/ErrorMessage';
+import AIPlanGenerator from '../components/ai/AIPlanGenerator';
+
 
 const TodoPage = () => {
-  const { todos, loading} = useTodos();
-  const { id } = useParams();
-  const navigate = useNavigate();
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [todo, setTodo] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  console.log (id);
-  const todo = todos.find(t => t.id ===id);
+    useEffect(() => {
+        fetchTodo();
+    }, [id]);
 
+    const fetchTodo = async () => {
+        try {
+            setLoading(true);
+            setError(null);
+            const data = await todoService.getTodoById(id);
+            setTodo(data);
+        } catch (err) {
+            setError('Failed to load todo. It may have been deleted.');
+            console.error('Error fetching todo:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  if (!todo) {
-    return <p>Todo not found</p>;
-  }
+    const handleBack = () => {
+        navigate('/');
+    };
 
-  return (
-    <div className="page">
-      <div className="App">
-        <div className='todos'>
-        <h1>{todo.title}</h1>
-        <p>Status: {todo.done ? 'Done' : 'Pending'}</p>
-      </div>
-    </div>
-    </div>
-  );
+    if (loading) {
+        return (
+            <div className="page">
+                <div className="todo-detail-container">
+                    <p className="loading-text">Loading todo...</p>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="page">
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com/"  />
+            <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet" />
+            <div className="todo-detail-container">
+                <h1 className="neon-title">{todo.title}</h1>
+                <ErrorMessage message={error} />
+                <div className="todo-detail-card">
+                    <div className="todo-detail-info">
+                        <p>Status:{todo.done ? ' Completed' : ' In Progress'}</p>
+                    </div>
+
+                    <AIPlanGenerator 
+                        todoId={todo.id} 
+                        todoTitle={todo.title}
+                    />
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default TodoPage;

@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className="page">
             <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
+            <link rel="preconnect" href="https://fonts.gstatic.com/" />
             <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet" />
             <h1 className="neon-title">Done It</h1>
             <p className="intro-desc">Be productive, efficient, organized</p>

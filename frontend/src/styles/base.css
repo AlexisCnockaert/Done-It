@@ -1,16 +1,20 @@
 body {
     background-image: url("../assets/bg_2.jpg");
     background-size: 100%;
-    color: #8f42e6;
+    color: #ffffff;
     font-family: "BBH Sans Hegarty", sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
-    padding-top: 40px;
+     
+    padding-top: 0px;
 }
 
+* {
+    font-family: "BBH Sans Hegarty", sans-serif !important;
+}
 
 .page {
     display: flex;

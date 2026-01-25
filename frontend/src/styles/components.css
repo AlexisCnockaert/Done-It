@@ -20,10 +20,10 @@
 
 .neon-button {
     margin-left: 15px;
-    font-family: "BBH Sans Hegarty", sans-serif;
+    
     padding: 20px 35px;
     border: 2px solid #8f42e6;
-    background: black;
+    background: rgb(0, 0, 0);
     color: #ffffff;
     cursor: pointer;
     border-radius: 8px;
@@ -35,6 +35,10 @@
 .neon-button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 25px #8f42e6, 0 0 50px #8f42e6;
+}
+
+.no-hover:hover {
+    transform: none !important;
 }
 
 .help-button {
@@ -66,7 +70,7 @@
 .help-box {
   position: fixed;
   top: 100px;
-  right: 20px;
+  right: 5px;
   background: black;
   color: #fafafa;
   border: 2px solid #8f42e6;

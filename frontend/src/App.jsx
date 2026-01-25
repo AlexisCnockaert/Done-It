@@ -5,6 +5,7 @@ import './styles/base.css';
 import './styles/typography.css';
 import './styles/components.css';
 import './styles/icons.css';
+import './styles/ai.css';
 import HomeButton from './components/HomeButton';
 function App() {
     return (

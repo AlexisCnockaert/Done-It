@@ -1,4 +1,4 @@
-package com.example.todo;
+package com.example.todo.dto;
 
 public record TodoDTO (
         String id,

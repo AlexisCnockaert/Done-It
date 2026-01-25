@@ -6,6 +6,7 @@ import TodoPage from '../pages/TodoPage';
 const AppRoutes = () => {
     return (
         <Routes>
+            
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/todos/:id" element={<TodoPage />} />
