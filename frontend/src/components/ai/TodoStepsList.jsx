@@ -37,9 +37,9 @@ const TodoStepsList = ({ steps, onToggle, onDelete, loading }) => {
 
                     <button
                         className="step-delete"
-                        onClick={() => !loading && onDelete(step.id)}
+                        onClick={() => !loading && onToggle(step.id)}
                         disabled={loading}
-                        title="Delete step"
+                        title="Toggle step"
                     >
                         ×
                     </button>
