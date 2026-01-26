@@ -69,7 +69,7 @@ public class AIService {
 
         sb.append("""
                 Generate 4-6 concrete, actionable steps.
-
+                
                 IMPORTANT RULES:
                 - Return ONLY valid JSON.
                 - Format: JSON array of strings.
