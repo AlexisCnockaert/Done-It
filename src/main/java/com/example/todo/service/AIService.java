@@ -36,7 +36,7 @@ public class AIService {
         System.out.println("=== AI STEP GENERATION ===");
         System.out.println("Task: " + todoTitle);
         System.out.println("Context: " + userContext);
-
+        System.out.println(apiKey);
         try {
             String prompt = buildPrompt(todoTitle, userContext);
             List<String> steps = callAI(prompt);
