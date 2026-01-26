@@ -1,12 +1,15 @@
 package com.example.todo.service;
 
 import com.example.todo.dto.TodoDTO;
+import com.example.todo.service.TodoStepService;
 import com.example.todo.dto.TodoRequest;
 import com.example.todo.exception.TodoNotFoundException;
 import com.example.todo.mapper.TodoMapper;
 import com.example.todo.model.Todo;
 import com.example.todo.repository.TodoRepository;
+import com.example.todo.repository.TodoStepRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -15,14 +18,22 @@ import java.util.List;
 @Transactional
 public class TodoService {
 
-
     private final TodoRepository todoRepository;
     private final TodoMapper todoMapper;
-    private TodoStepService todoStepService; 
+    private final TodoStepRepository todoStepRepository; 
+    private final TodoStepService todoStepService;
 
-    public TodoService(TodoMapper todoMapper, TodoRepository todoRepository) {
-        this.todoMapper = todoMapper;
+    @Autowired
+    public TodoService(
+            TodoStepService todoStepService,
+            TodoRepository todoRepository,
+            TodoMapper todoMapper,
+            TodoStepRepository todoStepRepository 
+    ) {
+        this.todoStepService = todoStepService;
         this.todoRepository = todoRepository;
+        this.todoMapper = todoMapper;
+        this.todoStepRepository = todoStepRepository; 
     }
 
     @Transactional(readOnly = true)

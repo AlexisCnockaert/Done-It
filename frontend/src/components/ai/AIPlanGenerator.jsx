@@ -35,14 +35,14 @@ const AIPlanGenerator = ({ todoId, todoTitle }) => {
     return (
         <div className="ai-plan-section">
             <div className="ai-plan-header">
-                <h3>🤖 AI Generated Plan</h3>
+                <h3> AI Generated Plan</h3>
                 {hasSteps && (
                     <button
                         className="ai-button-regenerate"
                         onClick={handleRegenerate}
                         disabled={generating}
                     >
-                        🔄 Regenerate
+                         Regenerate
                     </button>
                 )}
             </div>
@@ -50,7 +50,7 @@ const AIPlanGenerator = ({ todoId, todoTitle }) => {
             {error && <ErrorMessage message={error} />}
 
             {!hasSteps && !showPrompt && (
-                <div className="neon-button no-hover">
+                <div className="ai-box no-hover">
                     <p>Let AI help you break down this task into actionable steps!</p>
                     <button
                         className="ai-button-primary"

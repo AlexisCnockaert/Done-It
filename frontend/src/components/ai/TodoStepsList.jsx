@@ -11,7 +11,7 @@ const TodoStepsList = ({ steps, onToggle, onDelete, loading }) => {
     }
 
     return (
-        <div className="steps-list">
+        <div className="ai-box no-hover">
             {steps.map((step) => (
                 <div
                     key={step.id}

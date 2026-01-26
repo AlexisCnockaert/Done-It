@@ -10,7 +10,7 @@ const AIPromptInput = ({ onGenerate, onCancel, generating }) => {
     };
 
     return (
-        <div className="neon-button no-hover">
+        <div className="ai-box no-hover">
             <div className="ai-prompt-header">
                 <h3>Generate AI Plan</h3>
             </div>
