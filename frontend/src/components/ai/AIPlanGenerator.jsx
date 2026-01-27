@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAIPlan } from '../../hooks/useAIPlan';
 import AIPromptInput from './AIPromptInput';
 import TodoStepsList from './TodoStepsList';
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '../layout/ErrorMessage';
 
 
 const AIPlanGenerator = ({ todoId, todoTitle }) => {

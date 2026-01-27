@@ -4,7 +4,6 @@ const TodoForm = ({ onAdd, loading }) => {
     const [newTodo, setNewTodo] = useState('');
 
     const handleSubmit = async (e) => {
-        console.log("qads");
         e.preventDefault();
 
         await onAdd(newTodo);

@@ -43,7 +43,7 @@
 .help-button {
     position: fixed;
     font-family: "BBH Sans Hegarty", sans-serif;
-    top: 20px;
+    top: 40px;
     right: 20px;
     padding: 15px 25px;
     border: 2px solid #8f42e6;
@@ -68,8 +68,8 @@
 
 .help-box {
   position: fixed;
-  top: 100px;
-  right: 5px;
+  top: 110px;
+  right: 10px;
   background: black;
   color: #fafafa;
   border: 2px solid #8f42e6;

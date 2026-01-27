@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import { useTodos } from '../hooks/useTodos';
 import TodoForm from '../components/todo/TodoForm';
 import TodoList from '../components/todo/TodoList';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from '../components/layout/ErrorMessage';
+import Navbar from '../components/layout/Navbar';
+
 
 const Home = () => {
     const { todos, loading, error, addTodo, toggleTodo, deleteTodo } = useTodos();
     const [showHelp, setShowHelp] = useState(false); // state to toggle help text
     const toggleHelp = () => setShowHelp(prev => !prev);
     return (
-        <div className="page">
+        <>
+        <Navbar />
+        <div className="page page with-navbar">
+ 
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com/" />
             <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet" />
@@ -54,6 +59,7 @@ const Home = () => {
                 />
             </div>
         </div>
+         </>
     );
 }
 

@@ -1,17 +1,48 @@
 package com.example.todo.model;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
 
 @Document(collection = "todos")
 public class Todo {
+    
     @Id
     private String id;
+    
     private String title;
+    
     private boolean done;
+    
+    @Indexed  
+    private String userId; 
+    
+    private LocalDateTime createdAt;
+
+    public Todo() {
+        this.done = false;
+        this.createdAt = LocalDateTime.now();
+    }
 
     public Todo(String title) {
+        this();
         this.title = title;
-        this.done = false;
+    }
+
+    public Todo(String title, String userId) {
+        this();
+        this.title = title;
+        this.userId = userId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
     public String getId() {
         return id;

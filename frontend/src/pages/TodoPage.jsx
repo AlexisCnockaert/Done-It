@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import todoService from '../services/todoService';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from '../components/layout/ErrorMessage';
 import AIPlanGenerator from '../components/ai/AIPlanGenerator';
+import Navbar from '../components/layout/Navbar';
 
 
 const TodoPage = () => {
@@ -36,16 +37,22 @@ const TodoPage = () => {
 
     if (loading) {
         return (
-            <div className="page">
+              <>
+                <Navbar />
+            <div className="page page-with-navbar">
                 <div className="todo-detail-container">
                     <p className="loading-text">Loading todo...</p>
                 </div>
             </div>
+             </>
         );
     }
 
+    
     return (
-        <div className="page">
+          <>
+                <Navbar />
+        <div className="page page-with-navbar">
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com/"  />
             <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet" />
@@ -64,6 +71,7 @@ const TodoPage = () => {
                 </div>
             </div>
         </div>
+         </>
     );
 };
 
