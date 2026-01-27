@@ -2,6 +2,8 @@ package com.example.todo.service;
 
 import com.google.gson.*;
 import okhttp3.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class AIService {
+    private static final Logger logger = LoggerFactory.getLogger(AIService.class);
 
     @Value("${openrouter.api.key}")
     private String apiKey;
@@ -33,15 +36,15 @@ public class AIService {
     }
 
     public List<String> generateSteps(String todoTitle, String userContext) {
-        System.out.println("=== AI STEP GENERATION ===");
-        System.out.println("Task: " + todoTitle);
-        System.out.println("Context: " + userContext);
+        logger.info("=== AI STEP GENERATION ===");
+        logger.info("Task: {}", todoTitle);
+        logger.info("Context: {}", userContext);
 
         try {
             String prompt = buildPrompt(todoTitle, userContext);
             List<String> steps = callAI(prompt);
             if (steps.size() < 5) {
-                System.out.println("Not enough steps, retrying...");
+                logger.info("Not enough steps, retrying...");
                 steps = callAI(prompt + "\nReturn exactly 4-6 steps.");
             }
 
@@ -49,11 +52,11 @@ public class AIService {
                 return generateFallbackSteps(todoTitle);
             }
 
-            System.out.println("Generated " + steps.size() + " steps");
+            logger.info("Generated {} steps", steps.size());
             return steps;
 
         } catch (Exception e) {
-            System.err.println("AI Error: " + e.getMessage());
+            logger.error("AI Error: ", e);
             return generateFallbackSteps(todoTitle);
         }
     }
@@ -120,7 +123,7 @@ public class AIService {
             }
 
             String body = response.body().string();
-            System.out.println("AI Raw Response: " + body);
+            logger.debug("AI Raw Response: {}", body);
 
             JsonObject json = gson.fromJson(body, JsonObject.class);
             String content = json.getAsJsonArray("choices")
@@ -141,7 +144,7 @@ public class AIService {
                 steps.add(el.getAsString());
             }
         } catch (Exception e) {
-            System.err.println("JSON parsing failed: " + content);
+            logger.error("JSON parsing failed: {}", content, e);
         }
 
         return steps;
