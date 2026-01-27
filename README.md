@@ -1,7 +1,6 @@
 #  DoneIt
 
-
-A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL(MongoDB)** implementing **AI Model Features**, .\
+A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL(MongoDB)** implementing **AI Model Features**.\
 The goal: create a futuristic productivity assistant that guide the user through its tasks.
 
 ## Tech Stack
@@ -14,10 +13,14 @@ The goal: create a futuristic productivity assistant that guide the user through
 - ☕ Spring Boot (Java 21)
 - MongoDB for persistent task storage
 - RESTful API for todo management
+- JWT Authentication & Spring Security for user accounts
+- AI Model integration for task generation
+- Microservice architecture
 
 ## Setup Guide
 
-Run the backend, frontend, and MongoDB locally.
+
+
 
 ### Prerequisites
 
