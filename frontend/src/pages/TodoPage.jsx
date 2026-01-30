@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import todoService from '../services/todoService';
 import ErrorMessage from '../components/layout/ErrorMessage';
 import AIPlanGenerator from '../components/ai/AIPlanGenerator';
