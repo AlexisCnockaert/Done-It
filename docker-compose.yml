@@ -31,15 +31,15 @@ services:
     restart: unless-stopped
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     environment:
- 
       SPRING_DATA_MONGODB_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/todo_db?authSource=admin
-
       JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRATION: 86400000
-      IA_API_KEY: ${IA_API_KEY}
-      OPENROUTER_API_URL: https://openrouter.ai/api/v1/chat/completions
-      OPENROUTER_MODEL: allenai/molmo-2-8b:free
+      OPENROUTER_API_KEY: ${IA_API_KEY}
+      OPENROUTER_API_URL: ${OPENROUTER_API_URL}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL}
     depends_on:
       mongodb:
         condition: service_healthy

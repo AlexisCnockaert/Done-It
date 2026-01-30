@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class AIService {
     private static final Logger logger = LoggerFactory.getLogger(AIService.class);
 
-    @Value("${openrouter.api.key:}")
+    @Value("${OPENROUTER_API_KEY}")
     private String apiKey;
 
     @Value("${openrouter.api.url:https://openrouter.ai/api/v1/chat/completions}")
@@ -39,7 +39,9 @@ public class AIService {
         logger.info("=== AI STEP GENERATION ===");
         logger.info("Task: {}", todoTitle);
         logger.info("Context: {}", userContext);
-
+        logger.info("API KEY = {}", apiKey);
+        logger.info("API URL = {}", apiUrl);
+        logger.info("MODEL = {}", model);
         try {
             String prompt = buildPrompt(todoTitle, userContext);
             List<String> steps = callAI(prompt);
