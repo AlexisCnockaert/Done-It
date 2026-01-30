@@ -25,7 +25,6 @@ jobs:
         distribution: 'temurin'
 
     - name: Build Backend
-      working-directory: ./backend
       run: ./mvn clean package -DskipTests
 
     # 3. Frontend - Node 18
