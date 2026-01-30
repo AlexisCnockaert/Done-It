@@ -8,7 +8,6 @@ import Navbar from '../components/layout/Navbar';
 
 const TodoPage = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
     const [todo, setTodo] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
