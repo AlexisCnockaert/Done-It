@@ -13,27 +13,24 @@ const TodoPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        fetchTodo();
-    }, [id]);
+    const fetchTodo = useCallback(async () => {
+    try {
+        setLoading(true);
+        setError(null);
+        const data = await todoService.getTodoById(id);
+        setTodo(data);
+    } catch (err) {
+        setError('Failed to load todo. It may have been deleted.');
+        console.error('Error fetching todo:', err);
+    } finally {
+        setLoading(false);
+    }
+}, [id]);
 
-    const fetchTodo = async () => {
-        try {
-            setLoading(true);
-            setError(null);
-            const data = await todoService.getTodoById(id);
-            setTodo(data);
-        } catch (err) {
-            setError('Failed to load todo. It may have been deleted.');
-            console.error('Error fetching todo:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
+useEffect(() => {
+    fetchTodo();
+}, [id, fetchTodo]);
 
-    const handleBack = () => {
-        navigate('/');
-    };
 
     if (loading) {
         return (

@@ -16,7 +16,6 @@ const AIPlanGenerator = ({ todoId, todoTitle }) => {
         generatePlan,
         toggleStep,
         deleteStep,
-        regeneratePlan
     } = useAIPlan(todoId);
 
     const handleGenerate = async (context) => {

@@ -8,28 +8,29 @@ export const useAIPlan = (todoId) => {
     const [error, setError] = useState(null);
     const [hasSteps, setHasSteps] = useState(false);
 
-    useEffect(() => {
-        if (todoId) {
-            fetchSteps();
-        }
-    }, [todoId]);
+   const fetchSteps = useCallback(async () => {
+    try {
+        setLoading(true);
+        setError(null);
+        const data = await aiService.getTodoSteps(todoId);
+        setSteps(data);
+        setHasSteps(data.length > 0);
+    } catch (err) {
+        console.error('Error fetching steps:', err);
+        setError('Failed to load steps.');
+        setSteps([]);
+        setHasSteps(false);
+    } finally {
+        setLoading(false);
+    }
+}, [todoId]);
 
-    const fetchSteps = useCallback(async () => {
-        try {
-            setLoading(true);
-            setError(null);
-            const data = await aiService.getTodoSteps(todoId);
-            setSteps(data);
-            setHasSteps(data.length > 0);
-        } catch (err) {
-            console.error('Error fetching steps:', err);
-            setError('Failed to load steps.');
-            setSteps([]);
-            setHasSteps(false);
-        } finally {
-            setLoading(false);
-        }
-    }, [todoId]);
+useEffect(() => {
+    if (todoId) {
+        fetchSteps();
+    }
+}, [todoId, fetchSteps]);
+
 
     const generatePlan = async (todoTitle, userContext) => {
         try {
