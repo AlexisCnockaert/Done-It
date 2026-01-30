@@ -50,3 +50,4 @@ npm install
 npm start
 ```
 
+![CI Status](https://github.com/AlexisCnockaert/react-springboot-todolist/workflows/Simple%20CI/badge.svg)
