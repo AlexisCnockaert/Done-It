@@ -15,13 +15,13 @@ import java.util.concurrent.TimeUnit;
 public class AIService {
     private static final Logger logger = LoggerFactory.getLogger(AIService.class);
 
-    @Value("${openrouter.api.key}")
+    @Value("${openrouter.api.key:}")
     private String apiKey;
 
-    @Value("${openrouter.api.url}")
+    @Value("${openrouter.api.url:https://openrouter.ai/api/v1/chat/completions}")
     private String apiUrl;
 
-    @Value("${openrouter.model}")
+    @Value("${openrouter.model:allenai/molmo-2-8b:free}")
     private String model;
 
     private final OkHttpClient httpClient;
