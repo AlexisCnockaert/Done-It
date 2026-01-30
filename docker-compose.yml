@@ -38,8 +38,6 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRATION: 86400000
       OPENROUTER_API_KEY: ${IA_API_KEY}
-      OPENROUTER_API_URL: ${OPENROUTER_API_URL}
-      OPENROUTER_MODEL: ${OPENROUTER_MODEL}
     depends_on:
       mongodb:
         condition: service_healthy
