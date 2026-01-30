@@ -1,53 +1,81 @@
-#  DoneIt
+# DoneIt
 
-A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL(MongoDB)** implementing **AI Model Features**.\
-The goal: create a futuristic productivity assistant that guide the user through its tasks.
+![CI Status](https://github.com/AlexisCnockaert/react-springboot-todolist/workflows/Simple%20CI/badge.svg)
 
-## Tech Stack
+A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL (MongoDB)** implementing **AI Model Features**.
+The goal: create a futuristic productivity assistant that guides the user through their tasks.
 
-**Frontend**
-- ⚛️ React (modern hooks + functional components)
-- Custom CSS neon theme with glowing UI
+## Features
 
-**Backend**
+-  **Full CRUD operations** for task management
+-  **AI-powered task generation** using OpenRouter API
+-  **JWT Authentication** with secure user accounts
+-  **Docker support** for easy deployment
+-  **CI/CD pipeline** with automated testing
+
+##  Tech Stack
+
+### Frontend
+-  React  (modern hooks + functional components)
+-  Custom CSS neon theme with glowing UI
+
+### Backend
 - ☕ Spring Boot (Java 21)
-- MongoDB for persistent task storage
-- RESTful API for todo management
-- JWT Authentication & Spring Security for user accounts
-- AI Model integration for task generation
-- Microservice architecture
+-  MongoDB for persistent task storage
+-  Spring Security + JWT Authentication
+-  AI Model integration (OpenRouter API)
+-  RESTful API architecture
 
-## Setup Guide
-
-
-
+### DevOps
+- 🐳 Docker
+-  GitHub Actions CI/CD
+-  Automated testing
 
 ### Prerequisites
 
-- Java 21 & Maven  
-- Node.js & npm  
-- MongoDB Community Edition
+- [Docker](https://docs.docker.com/get-docker/) installed
+- [Docker Compose](https://docs.docker.com/compose/install/) installed
 
-### Start MongoDB - first terminal
+### Local Development
+
+1. **Create environment file**
+   
+   Create a `.env` file at the root of the project:
+   ```env
+   MONGO_USERNAME=admin
+   MONGO_PASSWORD=your_secure_password
+   JWT_SECRET=your_super_long_jwt_secret_min_32_characters
+   IA_API_KEY=your_openrouter_api_key
+   ```
+
+2. **Start the application**
+   ```bash
+   docker-compose up --build -d
+   ```
+
+3. **Access the application**
+   -  Frontend: [http://localhost](http://localhost)
+   -  Backend API: [http://localhost:8080/api](http://localhost:8080/api)
+   -  MongoDB: `localhost:27017`
+
+### Useful Commands
 
 ```bash
-# Linux / macOS
-mongod --dbpath ~/mongodb/data
+# View logs
+docker-compose logs -f
 
-# Windows
-"C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath C:\mongodb\data
-```
-### Run SpringBoot Backend - second terminal
-```bash
-mvn clean install
-mvn spring-boot:run
-```
+# Stop the application
+docker-compose down
 
-### Run React Frontend - third terminal
-```bash
-cd frontend
-npm install
-npm start
-```
+# Rebuild after changes
+docker-compose up --build
 
-![CI Status](https://github.com/AlexisCnockaert/react-springboot-todolist/workflows/Simple%20CI/badge.svg)
+# Remove all data (volumes)
+docker-compose down -v
+```
+## 📝 License
+
+This project is licensed under the MIT License.
+---
+
+⭐ If you found this project helpful, please consider giving it a star!
