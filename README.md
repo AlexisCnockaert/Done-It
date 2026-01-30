@@ -11,7 +11,7 @@ The goal: create a futuristic productivity assistant that guides the user throug
 -  **AI-powered task generation** using OpenRouter API
 -  **JWT Authentication** with secure user accounts
 -  **Docker support** for easy deployment
--  **CI/CD pipeline** with automated testing
+-  **CI pipeline** with automated testing
 
 ##  Tech Stack
 
@@ -28,7 +28,7 @@ The goal: create a futuristic productivity assistant that guides the user throug
 
 ### DevOps
 - 🐳 Docker
--  GitHub Actions CI/CD
+-  GitHub Actions CI
 -  Automated testing
 
 ### Prerequisites
