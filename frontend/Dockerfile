@@ -2,9 +2,9 @@ FROM node:18-alpine AS build
 
 WORKDIR /app
 
-COPY frontend/package*.json ./
+COPY package*.json ./
 
-RUN npm ci --silent
+RUN npm ci 
 
 COPY . .
 
