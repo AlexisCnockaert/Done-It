@@ -3,6 +3,8 @@ import api from './api';
 const authService = {
 
     register: async (username, email, password) => {
+        console.log(process.env.REACT_APP_API_URL);
+
         const response = await api.post('/auth/register', {
             username,
             email,
