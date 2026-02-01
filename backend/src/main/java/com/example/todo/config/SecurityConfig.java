@@ -2,6 +2,7 @@ package com.example.todo.config;
 
 import com.example.todo.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +24,9 @@ import java.util.Arrays;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    @Value("${frontend.url:http://localhost:3000}")
+    private String frontendUrl;
+
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
@@ -42,7 +46,8 @@ public class SecurityConfig {
         
         configuration.setAllowedOrigins(Arrays.asList(
         "http://localhost",
-        "http://localhost:3000"
+        "http://localhost:3000",
+        frontendUrl
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
