@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class AIService {
     private static final Logger logger = LoggerFactory.getLogger(AIService.class);
 
-    @Value("${OPENROUTER_API_KEY}")
+    @Value("${openrouter.api.key}")
     private String apiKey;
 
     @Value("${openrouter.api.url:https://openrouter.ai/api/v1/chat/completions}")
