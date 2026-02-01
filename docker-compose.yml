@@ -37,7 +37,7 @@ services:
       SPRING_DATA_MONGODB_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/todo_db?authSource=admin
       JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRATION: 86400000
-      OPENROUTER_API_KEY: ${IA_API_KEY}
+      IA_API_KEY: ${IA_API_KEY}
     depends_on:
       mongodb:
         condition: service_healthy
