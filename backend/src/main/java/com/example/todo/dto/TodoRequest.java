@@ -9,8 +9,6 @@ public class TodoRequest {
     @Size(min = 1, max = 50, message = "Title must be between 1 and 100 characters")
     private String title;
 
-    private String description;
-
     public TodoRequest() {
     }
 
@@ -18,9 +16,8 @@ public class TodoRequest {
         this.title = title;
     }
 
-    public TodoRequest(String title, String description) {
+    public TodoRequest(String title) {
         this.title = title;
-        this.description = description;
     }
 
     public String getTitle() {
@@ -31,11 +28,4 @@ public class TodoRequest {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
