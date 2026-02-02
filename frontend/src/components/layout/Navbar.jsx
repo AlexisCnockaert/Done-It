@@ -9,7 +9,10 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout();
-        navigate('/login');
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        localStorage.removeItem('isDemo'); 
+        navigate('/landing');
     };
 
     return (
