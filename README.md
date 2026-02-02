@@ -5,9 +5,9 @@
 A glowing **To Do List** application built with **React**, **Spring Boot** and **NoSQL (MongoDB)** implementing **AI Model Features**.
 The goal: create a futuristic productivity assistant that guides the user through their tasks.
 
-### 🌐 Live Demo
+### Live Demo
 
-[https://todo-frontend-xxxx.onrender.com  ](https://todo-frontend-xyyz.onrender.com)
+[(https://todo-frontend-xyyz.onrender.com)](https://todo-frontend-xyyz.onrender.com)
 
 ## Features
 
@@ -35,12 +35,17 @@ The goal: create a futuristic productivity assistant that guides the user throug
 -  GitHub Actions CI
 -  Automated testing
 
-### Prerequisites
+
+<img width="1871" height="1009" alt="image" src="https://github.com/user-attachments/assets/8e778b32-714f-43fb-8f75-0280c9ef8651" />
+
+
+### Local Development
+
+#### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) installed
 - [Docker Compose](https://docs.docker.com/compose/install/) installed
 
-### Local Development
 
 1. **Create environment file**
    
@@ -77,6 +82,7 @@ docker-compose up --build
 # Remove all data (volumes)
 docker-compose down -v
 ```
+
 ## 📝 License
 
 This project is licensed under the MIT License.
