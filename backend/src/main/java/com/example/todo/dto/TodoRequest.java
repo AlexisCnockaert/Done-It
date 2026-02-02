@@ -15,7 +15,7 @@ public class TodoRequest {
     public TodoRequest(String title) {
         this.title = title;
     }
- 
+
     public String getTitle() {
         return title;
     }
@@ -23,4 +23,5 @@ public class TodoRequest {
     public void setTitle(String title) {
         this.title = title;
     }
+
 }

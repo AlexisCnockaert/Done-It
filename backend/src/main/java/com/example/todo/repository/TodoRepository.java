@@ -19,4 +19,6 @@ public interface TodoRepository extends MongoRepository<Todo, String> {
     boolean existsByIdAndUserId(String id, String userId);
     
     void deleteByIdAndUserId(String id, String userId);
+    
+    void deleteByUserId(String userId);
 }
