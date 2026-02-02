@@ -88,4 +88,39 @@ public class AuthService {
 
         return new UserDTO(user.getId(), user.getUsername(), user.getEmail());
     }
+
+    public AuthResponse loginOrCreateDemo(LoginRequest request) {
+        User user = userRepository
+                .findByUsernameOrEmail(request.getUsernameOrEmail(), request.getUsernameOrEmail())
+                .orElseGet(() -> createDemoUser(request));
+
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            throw new IllegalArgumentException("Invalid credentials");
+        }
+
+        String token = jwtTokenProvider.generateToken(user.getId(), user.getUsername());
+
+        return new AuthResponse(
+                token,
+                user.getId(),
+                user.getUsername(),
+                user.getEmail()
+        );
+    }
+
+    @Transactional(readOnly = true)
+    public String getUserIdByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .map(User::getId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    }
+
+    private User createDemoUser(LoginRequest request) {
+        User user = new User(
+                "demo",
+                request.getUsernameOrEmail(),
+                passwordEncoder.encode(request.getPassword())
+        );
+        return userRepository.save(user);
+    }
 }

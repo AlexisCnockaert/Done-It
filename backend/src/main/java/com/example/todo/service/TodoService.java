@@ -51,7 +51,10 @@ public class TodoService {
             throw new IllegalArgumentException("You already have a todo with this title");
         }
 
-        Todo todo = new Todo(title, userId);  
+        Todo todo = new Todo(title, userId);
+        if (request.getDescription() != null) {
+            todo.setDescription(request.getDescription());
+        }
         Todo savedTodo = todoRepository.save(todo);
         return todoMapper.toResponse(savedTodo);
     }
