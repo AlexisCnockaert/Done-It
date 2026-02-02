@@ -33,10 +33,12 @@ public class DemoController {
         demoRequest.setPassword(DEMO_PASSWORD);
         
         try {
-            demoDataService.resetDemoData(DEMO_EMAIL);
             AuthResponse response = authService.loginOrCreateDemo(demoRequest);
+
+            demoDataService.resetDemoData(DEMO_EMAIL);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.badRequest().build();
         }
     }

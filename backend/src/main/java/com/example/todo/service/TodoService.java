@@ -52,9 +52,6 @@ public class TodoService {
         }
 
         Todo todo = new Todo(title, userId);
-        if (request.getDescription() != null) {
-            todo.setDescription(request.getDescription());
-        }
         Todo savedTodo = todoRepository.save(todo);
         return todoMapper.toResponse(savedTodo);
     }

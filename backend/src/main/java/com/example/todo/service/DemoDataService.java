@@ -45,10 +45,8 @@ public class DemoDataService {
     }
 
     private void createDemoTasks(String userId) {
-        // Task 1: Career-focused
         TodoDTO task1 = createDemoTodo(
             "Préparer mon entretien technique chez Google",
-            "Je veux être prêt pour l'entretien dans 2 semaines",
             userId
         );
         createDemoSteps(task1.id(), Arrays.asList(
@@ -59,10 +57,8 @@ public class DemoDataService {
             "Préparer mes questions à poser au recruteur"
         ));
 
-        // Task 2: Technical learning
         TodoDTO task2 = createDemoTodo(
             "Maîtriser Docker pour mon portfolio",
-            "Tous mes projets doivent être containerisés",
             userId
         );
         createDemoSteps(task2.id(), Arrays.asList(
@@ -73,10 +69,8 @@ public class DemoDataService {
             "Écrire un README avec les commandes Docker essentielles"
         ));
 
-        // Task 3: Personal development
         TodoDTO task3 = createDemoTodo(
             "Apprendre à jouer du piano",
-            "Je veux pouvoir jouer mes morceaux préférés d'ici 6 mois",
             userId
         );
         createDemoSteps(task3.id(), Arrays.asList(
@@ -87,30 +81,18 @@ public class DemoDataService {
             "Apprendre mon premier morceau simple (ex: La Lettre à Élise)"
         ));
 
-        // Task 4: Personal project (with pre-generated steps)
         TodoDTO task4 = createDemoTodo(
             "Organiser mon déménagement à Paris",
-            "Je déménage dans 1 mois pour mon nouveau job",
             userId
         );
-        createDemoSteps(task4.id(), Arrays.asList(
-            "Résilier bail actuel (préavis 1 mois)",
-            "Chercher appartement sur Leboncoin/PAP (budget 800€ max)",
-            "Réserver camion de déménagement chez Rent a Car",
-            "Faire cartons progressivement (1 pièce par weekend)",
-            "Changer adresse (CAF, impôts, banque, mutuelle)"
-        ));
-
-        // Task 5: Without steps (to showcase AI generation feature)
         createDemoTodo(
             "Refaire mon CV et mon portfolio",
-            "Mon CV a 2 ans, je dois le moderniser avant de postuler",
             userId
         );
     }
 
-    private TodoDTO createDemoTodo(String title, String description, String userId) {
-        TodoRequest request = new TodoRequest(title, description);
+    private TodoDTO createDemoTodo(String title, String userId) {
+        TodoRequest request = new TodoRequest(title);
         return todoService.createTodo(request, userId);
     }
 
