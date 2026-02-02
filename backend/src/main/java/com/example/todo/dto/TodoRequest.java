@@ -11,11 +11,7 @@ public class TodoRequest {
 
     public TodoRequest() {
     }
-
-    public TodoRequest(String title) {
-        this.title = title;
-    }
-
+    
     public TodoRequest(String title) {
         this.title = title;
     }
