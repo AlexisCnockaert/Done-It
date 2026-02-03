@@ -90,21 +90,17 @@ public class AuthService {
     }
 
     public AuthResponse loginOrCreateDemo(LoginRequest request) {
-        User user = userRepository
-                .findByUsernameOrEmail(request.getUsernameOrEmail(), request.getUsernameOrEmail())
-                .orElseGet(() -> createDemoUser(request));
+        String demoEmail = "demo@doneit.app";
+        userRepository.deleteAllByEmail(demoEmail);
+        User demoUser = createDemoUser(request);
 
-        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new IllegalArgumentException("Invalid credentials");
-        }
-
-        String token = jwtTokenProvider.generateToken(user.getId(), user.getUsername());
-
+        String token = jwtTokenProvider.generateToken(demoUser.getId(), demoUser.getUsername());
+        
         return new AuthResponse(
-                token,
-                user.getId(),
-                user.getUsername(),
-                user.getEmail()
+            token,
+            demoUser.getId(),
+            demoUser.getUsername(),
+            demoUser.getEmail()
         );
     }
 
