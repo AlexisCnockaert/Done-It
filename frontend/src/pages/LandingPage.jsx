@@ -52,19 +52,6 @@ const LandingPage = () => {
     An intelligent todo list that uses AI to break down your tasks
     into clear, actionable steps.
   </p>
-  
-  <div className="cta-buttons">
-    <button className="btn-demo" onClick={handleDemoLogin}>
-      Try demo now
-    </button>
-    <button className="btn-signup" onClick={() => navigate('/register')}>
-      Create an account
-    </button>
-  </div>
-  
-  <p className="demo-note">
-    No sign-up required to try it out
-  </p>
 </section>
 
 {}
@@ -104,7 +91,20 @@ const LandingPage = () => {
     </div>
   </div>
 </section>
-
+<section>
+  <div className="cta-buttons">
+    <button className="btn-demo" onClick={handleDemoLogin}>
+      Try demo now
+    </button>
+    <button className="btn-signup" onClick={() => navigate('/register')}>
+      Create an account
+    </button>
+  </div>
+  
+  <p className="demo-note">
+    No sign-up required to try it out
+  </p>
+  </section>
 {}
 <section className="tech-stack">
   <h2>Tech stack</h2>

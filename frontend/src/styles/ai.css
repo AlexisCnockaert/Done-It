@@ -5,6 +5,7 @@
     padding-top: var(--spacing-xl);
     margin-bottom: 30px;
     border-top: 2px solid var(--color-primary);
+    max-width: 600px;
 }
 
 .ai-box {

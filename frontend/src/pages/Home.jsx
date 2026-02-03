@@ -4,7 +4,7 @@ import TodoForm from '../components/todo/TodoForm';
 import TodoList from '../components/todo/TodoList';
 import ErrorMessage from '../components/layout/ErrorMessage';
 import Navbar from '../components/layout/Navbar';
-
+import DemoBanner from '../components/layout/DemoBanner';
 
 const Home = () => {
     const { todos, loading, error, addTodo, toggleTodo, deleteTodo } = useTodos();
@@ -13,6 +13,7 @@ const Home = () => {
     return (
         <>
         <Navbar />
+        <DemoBanner />
         <div className="page page with-navbar">
  
             <link rel="preconnect" href="https://fonts.googleapis.com" />
