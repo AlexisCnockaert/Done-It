@@ -45,7 +45,7 @@ public class AIService {
         try {
             String prompt = buildPrompt(todoTitle, userContext);
             List<String> steps = callAI(prompt);
-            if (steps.size() < 5) {
+            if (steps.size() < 4) {
                 logger.info("Not enough steps, retrying...");
                 steps = callAI(prompt + "\nReturn exactly 4-6 steps.");
             }
