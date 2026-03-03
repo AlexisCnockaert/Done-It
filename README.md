@@ -7,7 +7,7 @@ The goal: create a futuristic productivity assistant that guides the user throug
 
 ### Live Demo
 
-[(https://todo-frontend-xyyz.onrender.com)](https://todo-frontend-xyyz.onrender.com)
+[https://done-it.onrender.com](https://done-it.onrender.com)
 
 ## Features
 
