@@ -109,6 +109,25 @@ docker-compose up --build
 docker-compose down -v
 ```
 
+## Tests
+
+The RestAssured API tests cover task creation, listing, completion, deletion, and validation. The Playwright E2E tests cover these flows in the UI, as well as valid and invalid login attempts. MongoDB must be available on port 27017.
+
+```powershell
+docker run --rm -d --name doneit-test-mongo -p 27017:27017 mongo:7
+$env:SPRING_DATA_MONGODB_URI = "mongodb://127.0.0.1:27017/doneit"
+.\mvnw.cmd test
+cd frontend
+npm ci
+cd ..\e2e
+npm ci
+npx playwright install chromium
+npm test
+cd ..
+```
+
+The GitHub Actions workflow runs the Maven tests followed by the Playwright tests with Chromium, and preserves the E2E report if a job fails.
+
 ## 📝 License
 
 This project is licensed under the MIT License.
